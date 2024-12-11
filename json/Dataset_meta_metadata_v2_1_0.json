@@ -1,0 +1,2764 @@
+{
+    "OIMS": {
+        "OIMS_header": {
+            "mapping_info": [
+                {
+                    "mapper_tool_name": "metametadata_builder.py",
+                    "tool_version": "3.1",
+                    "input_parameters": [
+                        {
+                            "input_parameter_name": "excel_file_path",
+                            "input_parameter_value": "tmp_input/Dataset_meta_metadata_v2_1_0.xlsx"
+                        },
+                        {
+                            "input_parameter_name": "file_descriptors_path",
+                            "input_parameter_value": "tmp_input/file_descriptors_metadatatemplates_xlsx.json"
+                        }
+                    ]
+                }
+            ],
+            "metadata_schema": [
+                {
+                    "OIMS_content_object": "DatasetMetametadata",
+                    "schema_properties": [
+                        {
+                            "schema_name": "DatasetMetametadata-metadata",
+                            "schema_description": "description of all properties not captured by the OIMS core",
+                            "schema_type": "intermediate metadata metadata",
+                            "schema_version": "1.0",
+                            "schema_url": "https://github.com/ForesightInitiative/OIMS",
+                            "OIMS_content_object": "MetadataMetadata",
+                            "include_property": [
+                                "valid_entity_class",
+                                "suggested_oims_content_object",
+                                "format",
+                                "instructions",
+                                "conditional",
+                                "long description",
+                                "attribute_label",
+                                "validation_rule",
+                                "dependencies"
+                            ]
+                        },
+                        {
+                            "schema_name": "OIMS_base",
+                            "schema_description": "OIMS selfdescribing metadata schema",
+                            "schema_type": "self-describing metadata schema",
+                            "schema_version": "2.4",
+                            "schema_url": "https://raw.githubusercontent.com/ForesightInitiative/OIMS/main/BasicSchemas/OIMS_base.json",
+                            "schema_pid": {
+                                "pid_scheme": "handle",
+                                "pid": "https://hdl.handle.net/10568/135663"
+                            },
+                            "OIMS_content_object": "MetadataMetadata",
+                            "include_property": [
+                                "attribute_name",
+                                "attribute_description",
+                                "data_type_class",
+                                "data_type",
+                                "requirement_level",
+                                "multiple",
+                                "default_value"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "file_descriptors": {
+                "metadata_name": "Foresight data metametadata",
+                "metadata_description": "metametadata of the Foresight Initiative data and collection OIMS compatible metadata",
+                "metadata_version": {
+                    "current_version": "1.0.0",
+                    "metadata_version_status": "under development",
+                    "version_date": "2024-12-04"
+                },
+                "metadata_pid": {
+                    "pid_scheme": "handle",
+                    "pid": "<to be determined>"
+                },
+                "contact": [
+                    {
+                        "contact_name": "Gideon Kruseman",
+                        "contact_role": "OIMS team leader",
+                        "contact_affiliation": [
+                            {
+                                "contact_affiliation_name": "Alliance Bioversity International and CIAT",
+                                "contact_affiliation_acronym": "Alliance"
+                            }
+                        ],
+                        "contact_identifier": [
+                            {
+                                "identifier_scheme": "ORCID",
+                                "identifier": "0000-0002-3392-4176"
+                            }
+                        ],
+                        "contact_email": [
+                            "g.kruseman@cgiar.org",
+                            "gkruseman@gmail.com"
+                        ]
+                    }
+                ]
+            }
+        },
+        "OIMS_content": [
+            {
+                "OIMS_content_object": "DataMetametadata",
+                "OIMS_content_object_properties": {
+                    "metadata_class": [
+                        "metametadata"
+                    ],
+                    "metadata": [
+                        {
+                            "attribute_name": "dataset_title",
+                            "attribute_description": "Title of the dataset",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "Please provide the title of the collection of datasets"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata",
+                                "CG-core descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "dataset_subtitle",
+                            "attribute_description": "Subtitle of the dataset",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "optional",
+                            "multiple": false,
+                            "instructions": [
+                                "Please provide the subtitle of the dataset"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata",
+                                "CG-core descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "dataset_description",
+                            "attribute_description": "Description of the dataset",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "Please provide a brief description of the dataset"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata",
+                                "CG-core descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "dataset_version_info",
+                            "attribute_description": "Version information of the dataset",
+                            "data_type_class": "compound",
+                            "data_type": "compound_object",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "Please specify the version of the dataset"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "version",
+                            "attribute_description": "Version of the entity",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "Specify the version of the entity"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "dataset_version_type",
+                            "attribute_description": "Type of dataset version",
+                            "data_type_class": "primitive",
+                            "data_type": "controlled_vocabulary",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "Choose from the available version types"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "version_information",
+                            "attribute_description": "Additional version information",
+                            "data_type_class": "primitive",
+                            "data_type": "text",
+                            "requirement_level": "optional",
+                            "multiple": false,
+                            "instructions": [
+                                "Provide any additional details about this version"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "dataset_license",
+                            "attribute_description": "Information about the dataset license",
+                            "data_type_class": "compound",
+                            "data_type": "compound_object",
+                            "requirement_level": "required if applicable",
+                            "multiple": false,
+                            "instructions": [
+                                "Please add the license information"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "license_name",
+                            "attribute_description": "Name of the non-standard license or user agreement",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "recommended if applicable",
+                            "multiple": false,
+                            "instructions": [
+                                "Please specify the name of the non-standard license"
+                            ],
+                            "metadata_class": [
+                                "accessibility metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "AccessibilityMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "license_text",
+                            "attribute_description": "Full text of the non-standard license or user agreement",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "recommended if applicable",
+                            "multiple": false,
+                            "instructions": [
+                                "Please provide the full text of the non-standard license"
+                            ],
+                            "metadata_class": [
+                                "accessibility metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "AccessibilityMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "license_url",
+                            "attribute_description": "URL of the non-standard license or user agreement",
+                            "data_type_class": "primitive",
+                            "data_type": "url",
+                            "requirement_level": "recommended if applicable",
+                            "multiple": false,
+                            "instructions": [
+                                "Please provide the URL of the non-standard license"
+                            ],
+                            "metadata_class": [
+                                "accessibility metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "AccessibilityMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "rightsholder",
+                            "attribute_description": "Name of the organization holding rights to the asset",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "Specify the rights holder's name"
+                            ],
+                            "metadata_class": [
+                                "accessibility metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "AccessibilityMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "access_rights",
+                            "attribute_description": "Access rights for the asset",
+                            "data_type_class": "primitive",
+                            "data_type": "controlled_vocabulary",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "Indicate whether access is open or restricted"
+                            ],
+                            "metadata_class": [
+                                "accessibility metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "AccessibilityMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "embargo_date",
+                            "attribute_description": "Embargo date for the asset",
+                            "data_type_class": "primitive",
+                            "data_type": "date",
+                            "requirement_level": "optional",
+                            "multiple": false,
+                            "instructions": [
+                                "Provide the embargo date if applicable"
+                            ],
+                            "metadata_class": [
+                                "accessibility metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "AccessibilityMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "contact",
+                            "attribute_description": "contact of the asset",
+                            "data_type_class": "compound",
+                            "data_type": "compound_object",
+                            "requirement_level": "required",
+                            "multiple": true,
+                            "instructions": [
+                                "Provide details about the asset contact person or organization"
+                            ],
+                            "metadata_class": [
+                                "accessibility metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "AccessibilityMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "contact_name",
+                            "attribute_description": "name of the contact (can be an organization)",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required",
+                            "multiple": true,
+                            "instructions": [
+                                "Provide the name of the person or organization"
+                            ],
+                            "metadata_class": [
+                                "accessibility metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "AccessibilityMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "contact_email",
+                            "attribute_description": "email of the email",
+                            "data_type_class": "primitive",
+                            "data_type": "email",
+                            "requirement_level": "required",
+                            "multiple": true,
+                            "instructions": [
+                                "provide the contact email address"
+                            ],
+                            "metadata_class": [
+                                "accessibility metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "AccessibilityMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "creator",
+                            "attribute_description": "Information about the creator(s) of the asset",
+                            "data_type_class": "compound",
+                            "data_type": "compound_object",
+                            "requirement_level": "required",
+                            "multiple": true,
+                            "instructions": [
+                                "Provide details about the asset creators"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "creator_name",
+                            "attribute_description": "Name of the creator",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required if applicable",
+                            "multiple": false,
+                            "instructions": [
+                                "Provide the full name of the creator"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "creator_last_name",
+                            "attribute_description": "last name of the creator",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required if applicable",
+                            "multiple": false,
+                            "instructions": [
+                                "Provide the full name of the creator"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "creator_first_name",
+                            "attribute_description": "First Name of the creator",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required if applicable",
+                            "multiple": false,
+                            "instructions": [
+                                "Provide the full name of the creator"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "creator_affiliation",
+                            "attribute_description": "Affiliation of the creator",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "Specify the affiliation of the creator"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "creator_identifier",
+                            "attribute_description": "Identifier of the creator",
+                            "data_type_class": "compound",
+                            "data_type": "compound_object",
+                            "requirement_level": "required",
+                            "multiple": true,
+                            "instructions": [
+                                "Provide the creator's identifier (e.g.  ORCID)"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "pi_identifier_scheme",
+                            "attribute_description": "Identifier scheme",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "Specify the identifier scheme (e.g.  ORCID)"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "pi_identifier",
+                            "attribute_description": "Actual identifier",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "Provide the actual identifier"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "creator_role",
+                            "attribute_description": "Role of the creator",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "recommended",
+                            "multiple": true,
+                            "instructions": [
+                                "Specify the creator's role (e.g. Principal Investigator)"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "contributor",
+                            "attribute_description": "Information about contributors to the asset",
+                            "data_type_class": "compound",
+                            "data_type": "compound_object",
+                            "requirement_level": "required",
+                            "multiple": true,
+                            "instructions": [
+                                "Specify the contributors and their roles"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "contributor_type",
+                            "attribute_description": "Type of contributor role",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "recommended",
+                            "multiple": true,
+                            "instructions": [
+                                "Specify the type of contributor (e.g. funder, collaborator)"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "contributor_name",
+                            "attribute_description": "Name of the contributor",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "recommended",
+                            "multiple": true,
+                            "instructions": [
+                                "Provide the name of the contributor"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "contributor_note",
+                            "attribute_description": "any notes regarding the contributor",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "optional",
+                            "multiple": true,
+                            "instructions": [],
+                            "metadata_class": [],
+                            "valid_entity_class": [],
+                            "suggested_oims_content_object": ""
+                        },
+                        {
+                            "attribute_name": "temporal_coverage",
+                            "attribute_description": "Temporal coverage of the asset",
+                            "data_type_class": "compound",
+                            "data_type": "compound_object",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "Specify the time period covered by the asset"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "time_period_covered_start",
+                            "attribute_description": "Start date of the time period covered",
+                            "data_type_class": "primitive",
+                            "data_type": "date",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "Provide the start date of the coverage period"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "time_period_covered_end",
+                            "attribute_description": "End date of the time period covered",
+                            "data_type_class": "primitive",
+                            "data_type": "date",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "Provide the end date of the coverage period"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "temporal_resolution",
+                            "attribute_description": "Resolution of the time period covered",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "Specify the resolution of the temporal coverage (e.g. yearly, monthly)"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "geographic_coverage",
+                            "attribute_description": "Geographic coverage of the asset",
+                            "data_type_class": "compound",
+                            "data_type": "compound_object",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "Specify the geographic area covered by the asset"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "not_blurred",
+                            "attribute_description": "the geographic coverage indicates the the lowest level of the full data coverage of the asset. ",
+                            "data_type_class": "primitive",
+                            "data_type": "boolean",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "boolean value, FALSE if the coverage is blurred to for instance sensitivity issues"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "regions",
+                            "attribute_description": "Regions covered by the asset, e.g. CGIAR regions",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required if applicable",
+                            "multiple": true,
+                            "instructions": [
+                                "Specify the regions covered by the asset"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "countries",
+                            "attribute_description": "Countries covered by the asset",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required if applicable",
+                            "multiple": true,
+                            "instructions": [
+                                "Specify the countries covered by the asset"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "aez",
+                            "attribute_description": "Agro-ecological zones covered",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required if applicable",
+                            "multiple": true,
+                            "instructions": [
+                                "Specify the agro-ecological zones covered"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "administrative_units",
+                            "attribute_description": "Administrative units covered",
+                            "data_type_class": "compound",
+                            "data_type": "compound_object",
+                            "requirement_level": "required if applicable",
+                            "multiple": true,
+                            "instructions": [
+                                "Provide details about the administrative units covered"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "admin_unit_type",
+                            "attribute_description": "Type of administrative unit",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required if applicable",
+                            "multiple": false,
+                            "instructions": [
+                                "Specify the type of administrative unit (e.g. distrivt, municipality)"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "admin_unit_code",
+                            "attribute_description": "Code of the administrative unit",
+                            "data_type_class": "primitive",
+                            "data_type": "integer",
+                            "requirement_level": "recommended if applicable",
+                            "multiple": false,
+                            "instructions": [
+                                "Provide the code of the administrative unit"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "admin_unit_code_url",
+                            "attribute_description": "the url of the code description",
+                            "data_type_class": "primitive",
+                            "data_type": "url",
+                            "requirement_level": "optional",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "admin_unit_name",
+                            "attribute_description": "Name of the administrative unit",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required if applicable",
+                            "multiple": false,
+                            "instructions": [
+                                "Provide the name of the administrative unit"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "admin_unit_name_classification",
+                            "attribute_description": "Classification of the administrative unit",
+                            "data_type_class": "primitive",
+                            "data_type": "url",
+                            "requirement_level": "recommended if applicable",
+                            "multiple": false,
+                            "instructions": [
+                                "Provide the classification link for the administrative unit name"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "other_spatial_classification",
+                            "attribute_description": "Other spatial classification",
+                            "data_type_class": "compound",
+                            "data_type": "compound_object",
+                            "requirement_level": "required if applicable",
+                            "multiple": true,
+                            "instructions": [
+                                "Provide other spatial classifications used"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "other_spatial_class_name",
+                            "attribute_description": "Name of the other spatial classification",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "Provide the name of the other spatial classification"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "other_spatial_class_url",
+                            "attribute_description": "URL of the other spatial classification",
+                            "data_type_class": "primitive",
+                            "data_type": "url",
+                            "requirement_level": "recommended ",
+                            "multiple": false,
+                            "instructions": [
+                                "Provide the URL of the other spatial classification"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "other_spatial_class_element_id",
+                            "attribute_description": "Element ID of the other spatial classification",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "Provide the element ID of the other spatial classification"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "xy_coordinates",
+                            "attribute_description": "geospatial coordinates of the asset if applicable",
+                            "data_type_class": "primitive",
+                            "data_type": "number",
+                            "requirement_level": "recommended if applicable",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "nw_corner_latitude",
+                            "attribute_description": "NW corner of the area covered",
+                            "data_type_class": "primitive",
+                            "data_type": "number",
+                            "requirement_level": "recommended if applicable",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "nw_corner_longitude",
+                            "attribute_description": "NW corner of the area covered",
+                            "data_type_class": "primitive",
+                            "data_type": "number",
+                            "requirement_level": "recommended if applicable",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "se_corner_latitude",
+                            "attribute_description": "SE corner of the area covered",
+                            "data_type_class": "primitive",
+                            "data_type": "number",
+                            "requirement_level": "recommended if applicable",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "se_corner_longitude",
+                            "attribute_description": "SE corner of the area covered",
+                            "data_type_class": "primitive",
+                            "data_type": "number",
+                            "requirement_level": "recommended if applicable",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "centroid_latitude",
+                            "attribute_description": "if central point of the area covered is used latitude of the centroid",
+                            "data_type_class": "primitive",
+                            "data_type": "number",
+                            "requirement_level": "recommended if applicable",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "centroid_longitude",
+                            "attribute_description": "if central point of the area covered is used longitude of the centroid",
+                            "data_type_class": "primitive",
+                            "data_type": "number",
+                            "requirement_level": "required if applicable",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "grid_size",
+                            "attribute_description": "grid size (especially important with centroids",
+                            "data_type_class": "primitive",
+                            "data_type": "number",
+                            "requirement_level": "required if applicable",
+                            "multiple": false,
+                            "instructions": [
+                                "if a centroid is provided the size of the grid is essential"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "data_level_geographic_coverage",
+                            "attribute_description": "data contains more granular geographic coverage information",
+                            "data_type_class": "primitive",
+                            "data_type": "boolean",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": ""
+                        },
+                        {
+                            "attribute_name": "dataset_keywords",
+                            "attribute_description": "Keywords associated with the asset",
+                            "data_type_class": "compound",
+                            "data_type": "compound_object",
+                            "requirement_level": "recommended",
+                            "multiple": true,
+                            "instructions": [
+                                "Provide keywords that describe the dataset"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "keyword_vocabulary",
+                            "attribute_description": "Vocabulary to which the keyword belongs",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required if applicable",
+                            "multiple": false,
+                            "instructions": [
+                                "e.g. AGROVOC,GACS,AgrO, JEL)"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "keyword_label",
+                            "attribute_description": "The actual keyword",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "keyword_url",
+                            "attribute_description": "url of the keyword",
+                            "data_type_class": "primitive",
+                            "data_type": "url",
+                            "requirement_level": "recommended if applicable",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "unit_of_analysis",
+                            "attribute_description": "e.g. plot, household, individual, community",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "recommended ",
+                            "multiple": true,
+                            "instructions": [
+                                "Even if multiple units of analysis are possible  choose wisely, a household survey can contain some individual level data, but the main focus is at the household level."
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "time_method",
+                            "attribute_description": "temporal method applied this can be time series, longitudanal or both as in a panel dataset",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "recommended ",
+                            "multiple": false,
+                            "instructions": [
+                                "longitudinal, panel, time series"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "data_source",
+                            "attribute_description": "the data in the asset has a source, this source can be described.",
+                            "data_type_class": "primitive",
+                            "data_type": "controlled_vocabulary",
+                            "requirement_level": "recommended ",
+                            "multiple": true,
+                            "instructions": [
+                                "Even though multiple options are possible, most data sets will have a single source. Multiple sources is usually relevant with combinbed derived datasets.\n\nChoose from: Survey",
+                                " Census",
+                                " Statistics",
+                                " Observations",
+                                " Machine generated",
+                                " online content"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "frequency",
+                            "attribute_description": "single, continuous, hourly, daily, weekly, bi-weekly monthly, yearly etc. (specify if not in list)",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "recommended ",
+                            "multiple": false,
+                            "instructions": [
+                                "Usually only one is relevant, but there may be exceptional cases where more than one frequency is applicable."
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "response_rate",
+                            "attribute_description": "response rate for primary Human Subjects Research data collection",
+                            "data_type_class": "primitive",
+                            "data_type": "percentage",
+                            "requirement_level": "recommended ",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "sampling_frame",
+                            "attribute_description": "sampling frame",
+                            "data_type_class": "primitive",
+                            "data_type": "text",
+                            "requirement_level": "recommended ",
+                            "multiple": false,
+                            "instructions": [
+                                "provide some information (free text)"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "domain",
+                            "attribute_description": "scientific domain",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "recommended ",
+                            "multiple": true,
+                            "instructions": [
+                                "e.g. economics, health, social sciences, agricultural sciences, meteorology"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "impact_area_focus",
+                            "attribute_description": "CGIAR focus area focus",
+                            "data_type_class": "primitive",
+                            "data_type": "controlled_vocabulary",
+                            "requirement_level": "recommended ",
+                            "multiple": true,
+                            "instructions": [
+                                "CGIAR focus area focus\n1 = Climate adaptation & mitigation",
+                                " \n2 = Environmental health & biodiversity \n3 = Nutrition, health & food security \n4 = Poverty reduction, livelihoods & jobs \n5 = Gender equality, youth & social inclusion. "
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "irb_type",
+                            "attribute_description": "type of ethics review conducted",
+                            "data_type_class": "primitive",
+                            "data_type": "controlled_vocabulary",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "no ethics review required",
+                                "no ethics review applied",
+                                " exempt",
+                                " expedited",
+                                " full review"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "irb_information",
+                            "attribute_description": "if ethics review was undertaken, this is sometimes done with multiple bodies, provide all relevant information",
+                            "data_type_class": "compound",
+                            "data_type": "compound_object",
+                            "requirement_level": "required if applicable ",
+                            "multiple": true,
+                            "instructions": [
+                                "use a column for each ethics review submission pertinent for this data set"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "irb_name",
+                            "attribute_description": "Name of ethics body",
+                            "data_type_class": "primitive",
+                            "data_type": "text",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "irb_registration",
+                            "attribute_description": "information on the official registration of the ethics review body",
+                            "data_type_class": "compound",
+                            "data_type": "compound_object",
+                            "requirement_level": "required if applicable ",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "irb_registration_country",
+                            "attribute_description": "in what country is the IRB registered",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "irb_registration_organization",
+                            "attribute_description": "what is the registration body",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "irb_registration_code",
+                            "attribute_description": "under what code is the IRB registered",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "irb_review_reference_code",
+                            "attribute_description": "reference code of the IRB review",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "direct_pii",
+                            "attribute_description": "the data contains personally identifiable information such as names, telephone numbers etc.",
+                            "data_type_class": "primitive",
+                            "data_type": "boolean",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "boolean value"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "indirect_pii",
+                            "attribute_description": "The data contains indirecxt persoanlly identifiable information such as household rosters, or any information that in combination with other information can lead to reidentification of the respondents",
+                            "data_type_class": "primitive",
+                            "data_type": "boolean",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "boolean value"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "geo-spatial_coordinates",
+                            "attribute_description": "The data contains granular geo-spatial coordinates",
+                            "data_type_class": "primitive",
+                            "data_type": "boolean",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "boolean value"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "geo-spatial_granularity_level",
+                            "attribute_description": "number of decimal points specificity of geo-spatial coordinates",
+                            "data_type_class": "primitive",
+                            "data_type": "integer",
+                            "requirement_level": "required if applicable ",
+                            "multiple": false,
+                            "instructions": [
+                                "integer"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "sensitivity_boolean",
+                            "attribute_description": "The data contains sensitive information such as information about crime, politically sensitive information, domestic  violence, etc.",
+                            "data_type_class": "primitive",
+                            "data_type": "boolean",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "boolean value"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "sensitivity_information",
+                            "attribute_description": "what kind of sensitive information does the data contain",
+                            "data_type_class": "primitive",
+                            "data_type": "text",
+                            "requirement_level": "required if applicable ",
+                            "multiple": false,
+                            "instructions": [
+                                "text, use separate columns for different types of sensitive information"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "documentation",
+                            "attribute_description": "key documenation related to the asset",
+                            "data_type_class": "compound",
+                            "data_type": "compound_object",
+                            "requirement_level": "recommended if applicable",
+                            "multiple": true,
+                            "instructions": [
+                                "fill in the information for each document in a separate column"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "document_title",
+                            "attribute_description": "title of the document",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "document_authors",
+                            "attribute_description": "authors of the document",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "last name, first name or initial",
+                                " (separated by a semi-colon)"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "document_type",
+                            "attribute_description": "document type",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "journal article",
+                                " book",
+                                " book chapter",
+                                " report",
+                                " etc."
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "year_of_publication",
+                            "attribute_description": "year of publication",
+                            "data_type_class": "primitive",
+                            "data_type": "integer",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "year"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "document_source",
+                            "attribute_description": "e.g. journal name, volume and issue",
+                            "data_type_class": "primitive",
+                            "data_type": "text",
+                            "requirement_level": "required if applicable ",
+                            "multiple": false,
+                            "instructions": [
+                                "citation information except for authors, title and year of publication."
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "documentation_persistent_identifier",
+                            "attribute_description": "Persistent identifier of documentation",
+                            "data_type_class": "compound",
+                            "data_type": "compound_object",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "Provide only one persistent identifier per document"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "documentation_persistent_identifier_type",
+                            "attribute_description": "what is the persistent identifier type",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "DOI",
+                                " Handle",
+                                " ISBN",
+                                " URL"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "documentation_persistent_identifier_id",
+                            "attribute_description": "actual identifier e.g. DOI link; handle link or URL",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "oims_metadata_link",
+                            "attribute_description": "link to an OIMS compatible metadata file for the publication",
+                            "data_type_class": "primitive",
+                            "data_type": "url",
+                            "requirement_level": "recommended ",
+                            "multiple": false,
+                            "instructions": [
+                                "if metadata is in this template answer is self"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "oims_metadata_link_detail",
+                            "attribute_description": "Does the metadata file contain only the metadata of this publication or contain metadata for multiple items",
+                            "data_type_class": "primitive",
+                            "data_type": "controlled_vocabulary",
+                            "requirement_level": "required if applicable",
+                            "multiple": false,
+                            "instructions": [
+                                "single or multiple"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "dataset",
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataset"
+                        },
+                        {
+                            "attribute_name": "collection_title",
+                            "attribute_description": "Title of the collection",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "Please provide the title of the collection of collections"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata",
+                                "CG-core descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadatacollection"
+                        },
+                        {
+                            "attribute_name": "collection_subtitle",
+                            "attribute_description": "Subtitle of the collection",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "optional",
+                            "multiple": false,
+                            "instructions": [
+                                "Please provide the subtitle of the collection"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata",
+                                "CG-core descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadatacollection"
+                        },
+                        {
+                            "attribute_name": "collection_description",
+                            "attribute_description": "Description of the collection",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "Please provide a brief description of the collection"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata",
+                                "CG-core descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadatacollection"
+                        },
+                        {
+                            "attribute_name": "collection_version_info",
+                            "attribute_description": "Version information of the collection",
+                            "data_type_class": "compound",
+                            "data_type": "compound_object",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "Please specify the version of the collection"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadatacollection"
+                        },
+                        {
+                            "attribute_name": "collection_license",
+                            "attribute_description": "Information about the collection license",
+                            "data_type_class": "compound",
+                            "data_type": "compound_object",
+                            "requirement_level": "required if applicable",
+                            "multiple": false,
+                            "instructions": [
+                                "Please add the license information"
+                            ],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "collection"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadatacollection"
+                        },
+                        {
+                            "attribute_name": "file_name",
+                            "attribute_description": "names of files",
+                            "data_type_class": "primitive",
+                            "data_type": "text",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "Technical metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "TechnicalMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "file_size",
+                            "attribute_description": "file size",
+                            "data_type_class": "primitive",
+                            "data_type": "text",
+                            "requirement_level": "recommended ",
+                            "multiple": false,
+                            "instructions": [
+                                "integer and size indicator (Byte, KB, MB, TB)"
+                            ],
+                            "metadata_class": [
+                                "Technical metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "TechnicalMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "file_url",
+                            "attribute_description": "url of the file",
+                            "data_type_class": "primitive",
+                            "data_type": "url",
+                            "requirement_level": "required if applicable ",
+                            "multiple": false,
+                            "instructions": [
+                                "provide the link (URL) if possible and not just the DOI or handle, as DOIs do not always point to the exact files."
+                            ],
+                            "metadata_class": [
+                                "Technical metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "TechnicalMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "encryption",
+                            "attribute_description": "encryption",
+                            "data_type_class": "primitive",
+                            "data_type": "text",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [
+                                "none, if not encrypted",
+                                ""
+                            ],
+                            "metadata_class": [
+                                "Technical metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "TechnicalMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "access_requirements",
+                            "attribute_description": "Access requirements to use the file",
+                            "data_type_class": "primitive",
+                            "data_type": "text",
+                            "requirement_level": "required if applicable ",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "Technical metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "TechnicalMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "data_format",
+                            "attribute_description": "data format",
+                            "data_type_class": "primitive",
+                            "data_type": "controlled_vocabulary",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "Technical metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "TechnicalMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "recording",
+                            "attribute_description": "recording method",
+                            "data_type_class": "primitive",
+                            "data_type": "text",
+                            "requirement_level": "required if applicable ",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "Technical metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "TechnicalMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "file_format",
+                            "attribute_description": "file format",
+                            "data_type_class": "primitive",
+                            "data_type": "text",
+                            "requirement_level": "required if applicable ",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "Technical metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "TechnicalMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "file_type",
+                            "attribute_description": "file type",
+                            "data_type_class": "primitive",
+                            "data_type": "controlled_vocabulary",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "Technical metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "TechnicalMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "file_structure",
+                            "attribute_description": "file structure",
+                            "data_type_class": "primitive",
+                            "data_type": "controlled_vocabulary",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "Technical metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "TechnicalMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "location_of_back-ups",
+                            "attribute_description": "location of back-ups",
+                            "data_type_class": "primitive",
+                            "data_type": "url",
+                            "requirement_level": "recommended ",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "Technical metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "TechnicalMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "back-up_frequency",
+                            "attribute_description": "back-up frequency",
+                            "data_type_class": "primitive",
+                            "data_type": "text",
+                            "requirement_level": "recommended ",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "Technical metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "TechnicalMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "data_file_version_info",
+                            "attribute_description": "This could include information about the version of the data file, especially if multiple versions of the same data file exist.",
+                            "data_type_class": "compound",
+                            "data_type": "compound_object",
+                            "requirement_level": "recommended",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "QualityControlMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "data_file_version",
+                            "attribute_description": NaN,
+                            "data_type_class": "primitive",
+                            "data_type": "text",
+                            "requirement_level": NaN,
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "QualityControlMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "data_file_version_date",
+                            "attribute_description": NaN,
+                            "data_type_class": "primitive",
+                            "data_type": "date",
+                            "requirement_level": NaN,
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "QualityControlMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "data_file_version_notes",
+                            "attribute_description": "This could include information about the version of the data file, especially if multiple versions of the same data file exist.",
+                            "data_type_class": "primitive",
+                            "data_type": "text",
+                            "requirement_level": "recommended",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "QualityControlMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "data quality checks",
+                            "attribute_description": "This could include information about how the data was checked for completeness, accuracy, and consistency. It could also include details about any data cleaning or transformation procedures that were performed",
+                            "data_type_class": "primitive",
+                            "data_type": "text",
+                            "requirement_level": "required if applicable ",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "quality assurance metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "QualityControlMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "data processing steps",
+                            "attribute_description": "This could include information about how the data was processed, including any algorithms or models used, and the parameters that were used in the processing.",
+                            "data_type_class": "primitive",
+                            "data_type": "text",
+                            "requirement_level": "required if applicable ",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "quality assurance metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "QualityControlMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "data file dependencies",
+                            "attribute_description": "This could include information about any other data files that are needed to use the current data file",
+                            "data_type_class": "primitive",
+                            "data_type": "text",
+                            "requirement_level": "required if applicable ",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "quality assurance metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "QualityControlMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "data file history",
+                            "attribute_description": "Changes relative to the previous version",
+                            "data_type_class": "primitive",
+                            "data_type": "text",
+                            "requirement_level": "required if applicable ",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "quality assurance metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "QualityControlMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "data quality issues",
+                            "attribute_description": "any data quality issues not covered elsewhere that need to be known for reuse of the data",
+                            "data_type_class": "primitive",
+                            "data_type": "text",
+                            "requirement_level": "recommended",
+                            "multiple": false,
+                            "instructions": [
+                                "free text"
+                            ],
+                            "metadata_class": [
+                                "quality assurance metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "QualityControlMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "language",
+                            "attribute_description": "Language of the data",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required",
+                            "multiple": true,
+                            "instructions": [],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "provenance_type",
+                            "attribute_description": "data source or origin could also be useful for tracking where the data came from and who is responsible for it",
+                            "data_type_class": "primitive",
+                            "data_type": "controlled_vocabulary",
+                            "requirement_level": "required",
+                            "multiple": true,
+                            "instructions": [
+                                "choose from:\noriginal data",
+                                " provenance information here",
+                                " provenance in data file"
+                            ],
+                            "metadata_class": [
+                                "provenance metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "provenance_url_file",
+                            "attribute_description": "url of original data",
+                            "data_type_class": "primitive",
+                            "data_type": "url",
+                            "requirement_level": "required if applicable ",
+                            "multiple": false,
+                            "instructions": [
+                                "url"
+                            ],
+                            "metadata_class": [
+                                "provenance metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "provenance_container",
+                            "attribute_description": NaN,
+                            "data_type_class": "compound",
+                            "data_type": "compound_object",
+                            "requirement_level": NaN,
+                            "multiple": true,
+                            "instructions": [],
+                            "metadata_class": [],
+                            "valid_entity_class": [],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "provenance_container_id",
+                            "attribute_description": "identifier of the origianl container",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": NaN,
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [],
+                            "valid_entity_class": [],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "provenance_container_tags",
+                            "attribute_description": NaN,
+                            "data_type_class": "primitive",
+                            "data_type": "text",
+                            "requirement_level": NaN,
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [],
+                            "valid_entity_class": [],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "provenance variable",
+                            "attribute_description": "if the provenance informatiuon is embedded in the data file indoicate the location of this information",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required if applicable ",
+                            "multiple": false,
+                            "instructions": [
+                                "one or more relevant variable identifiers containing provenance information"
+                            ],
+                            "metadata_class": [
+                                "provenance metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "interview setting",
+                            "attribute_description": "Interview or observation setting (e.g., in-person, phone, video conference)",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required if applicable ",
+                            "multiple": true,
+                            "instructions": [
+                                "usually it has a single value, but may have multiple if applicable"
+                            ],
+                            "metadata_class": [
+                                "qualitative data collection metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "languages spoken",
+                            "attribute_description": NaN,
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required if applicable ",
+                            "multiple": true,
+                            "instructions": [],
+                            "metadata_class": [
+                                "qualitative data collection metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "data_quality_assessment",
+                            "attribute_description": NaN,
+                            "data_type_class": "primitive",
+                            "data_type": "text",
+                            "requirement_level": "recommended ",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "quality assurance metadata"
+                            ],
+                            "valid_entity_class": [
+                                "variable"
+                            ],
+                            "suggested_oims_content_object": "DataQualityVariableLevel"
+                        },
+                        {
+                            "attribute_name": "accuracy",
+                            "attribute_description": NaN,
+                            "data_type_class": "primitive",
+                            "data_type": "text",
+                            "requirement_level": "recommended ",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "quality assurance metadata"
+                            ],
+                            "valid_entity_class": [
+                                "variable"
+                            ],
+                            "suggested_oims_content_object": "DataQualityVariableLevel"
+                        },
+                        {
+                            "attribute_name": "precision",
+                            "attribute_description": NaN,
+                            "data_type_class": "primitive",
+                            "data_type": "text",
+                            "requirement_level": "recommended ",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "quality assurance metadata"
+                            ],
+                            "valid_entity_class": [
+                                "variable"
+                            ],
+                            "suggested_oims_content_object": "DataQualityVariableLevel"
+                        },
+                        {
+                            "attribute_name": "field_team_notes",
+                            "attribute_description": "any variable level notes, comments and remarks",
+                            "data_type_class": "primitive",
+                            "data_type": "text",
+                            "requirement_level": "recommended ",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "quality assurance metadata"
+                            ],
+                            "valid_entity_class": [
+                                "variable"
+                            ],
+                            "suggested_oims_content_object": "DataQualityVariableLevel"
+                        },
+                        {
+                            "attribute_name": "translation_problem_boolean",
+                            "attribute_description": "were there problems with translation of variables from local language to current language",
+                            "data_type_class": "primitive",
+                            "data_type": "boolean",
+                            "requirement_level": "recommended ",
+                            "multiple": false,
+                            "instructions": [
+                                "check if there were problems with translation of variables from local language to current language"
+                            ],
+                            "metadata_class": [
+                                "quality assurance metadata"
+                            ],
+                            "valid_entity_class": [
+                                "variable"
+                            ],
+                            "suggested_oims_content_object": "DataQualityVariableLevel"
+                        },
+                        {
+                            "attribute_name": "file_description",
+                            "attribute_description": "provide a brief description of this file, examples can be description of the questionnaire section covered by the file.",
+                            "data_type_class": "primitive",
+                            "data_type": "text",
+                            "requirement_level": "required",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "research_question",
+                            "attribute_description": "if relevant for the data file: The purpose or research question that the data file addresses could be included in the descriptive metadata. ",
+                            "data_type_class": "primitive",
+                            "data_type": "text",
+                            "requirement_level": "recommended ",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "interview_or_observation_protocol",
+                            "attribute_description": "If unstructured data , please indicate the Interview or observation protocol (e.g., structured interview, key informant interview, focus group discussion, semi-structured interview, ethnographic observation, field notes)",
+                            "data_type_class": "primitive",
+                            "data_type": "text",
+                            "requirement_level": "recommended ",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "interview_or_observation_protocol_url",
+                            "attribute_description": "if the interbiew or observation proticol is availablke externally, please provide the link to the protocol url",
+                            "data_type_class": "primitive",
+                            "data_type": "url",
+                            "requirement_level": "recommended ",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "descriptive metadata"
+                            ],
+                            "valid_entity_class": [
+                                "data file"
+                            ],
+                            "suggested_oims_content_object": "DescriptiveMetadataDataFile"
+                        },
+                        {
+                            "attribute_name": "container_type",
+                            "attribute_description": "container type ",
+                            "data_type_class": "primitive",
+                            "data_type": "controlled_vocabulary",
+                            "requirement_level": NaN,
+                            "multiple": false,
+                            "instructions": [
+                                "what kind of container is this"
+                            ],
+                            "metadata_class": [
+                                "structural metadata"
+                            ],
+                            "valid_entity_class": [
+                                "container"
+                            ],
+                            "suggested_oims_content_object": "StructuralMetadataDataFile "
+                        },
+                        {
+                            "attribute_name": "container_type_loc_in_doc",
+                            "attribute_description": "location of the conatiner in a text document",
+                            "data_type_class": "compound",
+                            "data_type": "compound_object",
+                            "requirement_level": "required in applicable",
+                            "multiple": false,
+                            "instructions": [],
+                            "metadata_class": [
+                                "structural metadata"
+                            ],
+                            "valid_entity_class": [
+                                "container"
+                            ],
+                            "suggested_oims_content_object": "StructuralMetadataDataFile "
+                        },
+                        {
+                            "attribute_name": "page_start",
+                            "attribute_description": "page on which the container starts",
+                            "data_type_class": "primitive",
+                            "data_type": "number",
+                            "requirement_level": "required in applicable",
+                            "multiple": false,
+                            "instructions": [
+                                "if the data is in a text file (e.g. Doc",
+                                " Docx",
+                                " PDF): the page on which the data starts"
+                            ],
+                            "metadata_class": [
+                                "structural metadata"
+                            ],
+                            "valid_entity_class": [
+                                "container"
+                            ],
+                            "suggested_oims_content_object": "StructuralMetadataDataFile "
+                        },
+                        {
+                            "attribute_name": "line_start",
+                            "attribute_description": "line on which the container starts",
+                            "data_type_class": "primitive",
+                            "data_type": "number",
+                            "requirement_level": "required in applicable",
+                            "multiple": false,
+                            "instructions": [
+                                "if the data is in a text file (e.g. Doc",
+                                " Docx",
+                                " PDF): the line number on page where the data starts"
+                            ],
+                            "metadata_class": [
+                                "structural metadata"
+                            ],
+                            "valid_entity_class": [
+                                "container"
+                            ],
+                            "suggested_oims_content_object": "StructuralMetadataDataFile "
+                        },
+                        {
+                            "attribute_name": "page_end",
+                            "attribute_description": "page on which the container ends",
+                            "data_type_class": "primitive",
+                            "data_type": "number",
+                            "requirement_level": "required in applicable",
+                            "multiple": false,
+                            "instructions": [
+                                "if the data is in a text file (e.g. Doc",
+                                " Docx",
+                                " PDF): the page on which the data ends"
+                            ],
+                            "metadata_class": [
+                                "structural metadata"
+                            ],
+                            "valid_entity_class": [
+                                "container"
+                            ],
+                            "suggested_oims_content_object": "StructuralMetadataDataFile "
+                        },
+                        {
+                            "attribute_name": "line_end",
+                            "attribute_description": "line on which the containerends",
+                            "data_type_class": "primitive",
+                            "data_type": "number",
+                            "requirement_level": "required in applicable",
+                            "multiple": false,
+                            "instructions": [
+                                "if the data is in a text file (e.g. Doc",
+                                " Docx",
+                                " PDF): the line number on page where the data ends"
+                            ],
+                            "metadata_class": [
+                                "structural metadata"
+                            ],
+                            "valid_entity_class": [
+                                "container"
+                            ],
+                            "suggested_oims_content_object": "StructuralMetadataDataFile "
+                        },
+                        {
+                            "attribute_name": "container_start_identifier",
+                            "attribute_description": "start tag if container van be identified with tags",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required in applicable",
+                            "multiple": false,
+                            "instructions": [
+                                "if the data container can be identified with tags: start tag"
+                            ],
+                            "metadata_class": [
+                                "structural metadata"
+                            ],
+                            "valid_entity_class": [
+                                "container"
+                            ],
+                            "suggested_oims_content_object": "StructuralMetadataDataFile "
+                        },
+                        {
+                            "attribute_name": "container_end_identifier",
+                            "attribute_description": "end tag if container van be identified with tags",
+                            "data_type_class": "primitive",
+                            "data_type": "string",
+                            "requirement_level": "required in applicable",
+                            "multiple": false,
+                            "instructions": [
+                                "if the data container can be identified with tags: end tag"
+                            ],
+                            "metadata_class": [
+                                "structural metadata"
+                            ],
+                            "valid_entity_class": [
+                                "container"
+                            ],
+                            "suggested_oims_content_object": "StructuralMetadataDataFile "
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
