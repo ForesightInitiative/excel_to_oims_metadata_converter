@@ -38,19 +38,48 @@ python metadata_converter.py --settings config/settings.json
 ## Folder Structure
 
 excel_to_oims_metadata_converter/
-|-- metadata_converter.py # Entry point for the tool
+
+
+|-- metadata_converter.py # Entry point for the tool 
+
+
 |-- modules/              # General-purpose modules
+
+
 |-- utils/                # Utility modules (e.g., logging, validators)
+
+
 |-- mappers/              # Specific mappers
+
+
 |-- validators/           # Input/output validation modules
+
+
+
 |-- oims_structures/      # OIMS-compatible schemas and related files
+
+
 |-- json/                 # Default JSON files
+
+
 |-- logs/                 # Process and error logs
-|-- config/               # location of the user settings file  
+
+
+|-- config/               # location of the user settings file 
+
+ 
 |-- img/                  # image files
+
+
 |-- documentation         # documentation files
+
+
 |-- README.md             # Basic documentation
+
+
 |-- requirements.txt      # Python dependencies
+
+
 |-- LICENSE               # Open-source license: GPL 3.0
 
 
