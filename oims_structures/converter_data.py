@@ -34,7 +34,7 @@ KNOWN_MAPPING_CLASSIFICATIONS = {
 #! <%GTREE 1.2 Known mappings%>
 # Known mappings
 KNOWN_MAPPINGS = {
-    "GENNOVATE_001": "GennovateMapper"}
+    "GENNOVATE_001": "GennovateMapper"
 }
 
 
@@ -50,7 +50,7 @@ KNOWN_SCHEMAS = {
 KNOWN_COMBINATIONS = {
             ("EXCEL_TO_OIMS_MAPPING_001", "Foresight data metametadata"): "StandardForesightMapper",
             ("EXCEL_TO_OIMS_MAPPING_BASE", "Foresight data metametadata"): "GenericMapper",
-            ("EXCEL_TO_OIMS_MAPPING_BASE_Ext_001","Foresight data metametadata)":"ExtendedGenericMapper"
+            ("EXCEL_TO_OIMS_MAPPING_BASE_Ext_001","Foresight data metametadata"):"ExtendedGenericMapper"
         }
 
 

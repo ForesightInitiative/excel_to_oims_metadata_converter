@@ -37,9 +37,10 @@ from utils.logger import SetupLogger
 #specific mappers are loaded dynamically
 
 #! <%GTREE 1.2.4 Load validators%>
-from validators.input_validator import InputValidator
+#_from validators.input_validator import InputValidator
+#_
 from validators.excel_to_oims_mapping_validator import ExcelToOimsMappingValidator
-from validators.output_validator import OutputValidator
+#_from validators.output_validator import OutputValidator
 
 
 #! <%GTREE 1.2.5 Load data%>
@@ -53,11 +54,14 @@ from oims_structures.converter_data import (
 class MetadataConverter:
     #! <%GTREE 2.1 Initialization%>
     def __init__(self, settings_path=None, settings=None):
+        print(f"settings_path: {settings_path}")
+        print(f"settings: {settings}")
         if settings:
             self.settings = settings
         elif settings_path:
-            self.settings = SettingsReader(settings_path).read_settings()
-        self.logger = setup_logger()
+            self.settings_path=settings_path
+            self.settings = SettingsReader(self.settings_path).read_settings()
+        self.logger = SetupLogger()
 
 
     #! <%GTREE 2.2 Load Inputs%>
@@ -65,20 +69,27 @@ class MetadataConverter:
     def load_inputs(self):
         self.logger.info("Loading input files...")
         self.excel_data = ExcelReader(self.settings["path_to_primary_metadata"]).read_excel()
-        if self.settings["path_to_mapping_file"].endswith(".json"):
-            self.mapping = JsonReader(self.settings["path_to_mapping_file"]).read_json()
+        mapping_file_path = self.settings["path_to_mapping_file"]
+        if mapping_file_path.endswith(".json"):
+            self.mapping = JsonReader(mapping_file_path).read_json()
             boolean_convert_excel_mapping = False
-        else:
-            self.mapping_excel = ExcelReader(self.settings["path_to_mapping_file"]).read_excel()
+            print("using settings file in json format")
+        elif mapping_file_path.endswith(".xlsx"):
+            self.mapping_excel = ExcelReader(mapping_file_path).read_excel()
             boolean_convert_excel_mapping = True
+        else:
+            raise ValueError(f"Unsupported mapping file format: {mapping_file_path}")
+
         self.schema = JsonReader(self.settings["path_to_oims_metadata_schema_file"]).read_json()
+
         if boolean_convert_excel_mapping:
-            self.mapping = convert_excel_mapping(self.mapping_excel)
+            print("trying to use settings file in xlsx format")
+            self.mapping = self.convert_excel_mapping(mapping_file_path)
 
     #! <%GTREE 2.3 Validate Inputs%>
     def validate_inputs(self):
         self.logger.info("Validating inputs...")
-        InputValidator.validate_settings(self.settings)
+        # InputValidator.validate_settings(self.settings)
         ExcelToOimsMappingValidator.validate_excel_against_mapping(self.excel_data, self.mapping)
         ExcelToOimsMappingValidator.validate_mapping_against_schema(self.mapping, self.schema)
 
@@ -111,7 +122,7 @@ class MetadataConverter:
         """
         try:
             # Load settings
-            self.settings = SettingsReader(self.settings_file_path).read_settings()
+            self.settings = SettingsReader(self.settings_path).read_settings()
 
             # Check file paths
             required_paths = [
@@ -128,6 +139,7 @@ class MetadataConverter:
             if not os.path.exists(output_dir):
                 os.makedirs(output_dir)
 
+
             # Determine mapping file type
             mapping_path = self.settings["path_to_mapping_file"]
             if mapping_path.endswith(".xlsx"):
@@ -138,27 +150,40 @@ class MetadataConverter:
                 raise ValueError(f"Unsupported mapping file type: {mapping_path}")
 
 
+            # Extract mapping classification, mapping ID, and schema ID from settings
             self.mapping_classification_id = self.settings["mapping_classification_id"]
             self.mapping_id = self.settings["mapping_id"]
             self.schema_id = self.settings["oims_metadata_schema_id"]
 
-            if mapping_classification_id not in KNOWN_MAPPING_CLASSIFICATIONS:
-                print(f"Unknown mapping classification ID: {mapping_classification_id}. Using generic conversion.")
-            if mapping_id not in KNOWN_MAPPINGS:
-                print(f"Unknown mapping ID: {mapping_id}. Using generic conversion.")
-            if schema_id not in KNOWN_SCHEMAS:
-                print(f"Unknown OIMS metadata schema ID: {schema_id}. Validation will not be performed.")
+            if self.mapping_classification_id not in KNOWN_MAPPING_CLASSIFICATIONS:
+                print(f"Unknown mapping classification ID: {self.mapping_classification_id}. Using generic conversion.")
+            if self.mapping_id not in KNOWN_MAPPINGS:
+                print(f"Unknown mapping ID: {self.mapping_id}. Using generic conversion.")
+            if self.schema_id not in KNOWN_SCHEMAS:
+                print(f"Unknown OIMS metadata schema ID: {self.schema_id}. Validation will not be performed.")
 
             # Set internal flags for generic conversion or validation
             self.generic_conversion = (
-                mapping_classification_id not in known_mapping_classifications
-                or mapping_id not in known_mappings
-                or schema_id not in known_schemas
+                self.mapping_classification_id not in KNOWN_MAPPING_CLASSIFICATIONS
+                or self.mapping_id not in KNOWN_MAPPINGS
+                or self.schema_id not in KNOWN_SCHEMAS
             )
         except Exception as e:
             raise ValueError(f"Settings validation failed: {e}")
 
-    #! <%GTREE 2.7 Run Conversion Process%>
+    #! <%GTREE 2.7 convert excel mapping file to a json mapping file%>
+    def convert_excel_mapping(self,mapping_excel_path):
+        """
+        Convert a mapping file in Excel format to JSON format and return the mapping.
+
+        :param mapping_excel_path: Path to the Excel mapping file.
+        :return: Dictionary representation of the converted JSON mapping.
+        """
+        print("Converting mapping file in Excel format to JSON format")
+        mapping_converter = ConvertMappingExcel()
+        return mapping_converter.convert_excel_mapping(mapping_excel_path)
+
+    #! <%GTREE 2.8 Run Conversion Process%>
     def run(self):
         self.validate_settings()
         self.load_inputs()
@@ -169,8 +194,8 @@ class MetadataConverter:
 
 #! <%GTREE 3 Main Function%>
 if __name__ == "__main__":
-    settings_file = "runcontrol/settings.json"
-    converter = MetadataConverter(settings__path=settings_file)
+    settings_file = "config/settings.json"
+    converter = MetadataConverter(settings_path=settings_file)
     converter.run()
 
 #============================   End Of File   ================================

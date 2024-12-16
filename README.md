@@ -4,12 +4,14 @@
 
 The **Excel to OIMS Metadata Converter** is a standalone tool designed to transform metadata stored in Excel files into OIMS-compatible JSON files. The tool ensures adherence to OIMS standards through robust validation mechanisms and modular design.
 
-Future extensions include:
+December 11, 2024: The application is still under development. please contact g.kruseman@cgiar.org if you want to contribute to the development.
+
+Future (2025 and beyomnd) extensions include:
 
 - Integration into a graphical user interface (GUI) toolkit.
 - Transformation into a web application for broader accessibility.
 
-## Features
+## Current Features (under development)
 
 - **Modular Design**: Reusable components for validation, mapping, and file handling.
 - **Dynamic Mappers**: Supports both specific and generic mapping logic.

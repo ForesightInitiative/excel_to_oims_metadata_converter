@@ -1,0 +1,8 @@
+# Core dependencies
+pandas
+json
+os
+openpyxl
+logging
+
+# Development dependencies

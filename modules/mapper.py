@@ -26,7 +26,7 @@ from oims_structures.converter_data import (
     KNOWN_MAPPING_CLASSIFICATIONS,
     KNOWN_MAPPINGS,
     KNOWN_SCHEMAS,
-    KNOWN_COMBINATIONS
+    KNOWN_COMBINATIONS,
     FALLBACK_MAPPER
 )
 

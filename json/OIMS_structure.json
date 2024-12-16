@@ -1,0 +1,25 @@
+{
+  "OIMS": {
+    "OIMS_header": {
+      "mapping_info": [],             # it will use the standard information linked to the converter
+      "metadata_schema":[{}],         # key information in the sheet  "mapping_metadata"
+      "file_descriptors":{}           # key information in the sheet  "mapping_metadata"
+    "OIMS_content": ":[
+      {
+        "OIMS_content_object":"mapping",
+        "OIMS_content_object_properties": {
+          "validated_oims_metadata_schema":[]   # key information in the sheet  "mapping_metadata"
+          "metadata_class":["mappings"]
+          "metadata": [
+            "sheetname":"<name of the sheet with mapping pair info corresponds to sheet names in the primary metadata template file in MS Excel format>",   # sheet "mappings" provides key information
+            "oims_section":<OIMS_header or OIMS_content>",
+            "oims_sub_section" or "oims_content_object":"depends on oims_section",
+            "entity_class":"<emtity class is required if and only if oims_section == OIMS_content>",
+            "table_orientation":"< attributes_in_rows or attributes_in_columns>",
+            "attribute_pairs": [{}]            # information from sheet
+          ]
+        }
+      ]
+    }
+  }
+}
